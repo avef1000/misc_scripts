@@ -1,0 +1,21 @@
+#!/bin/bash
+echo "######################################################################################################"
+echo "script to install the update and upgrade system, upgrade initramfs/kernel and upgrade grub bootloader"
+sleep 2
+echo "                         script written by (AK43) Avraham Freeman                       "
+
+echo "######################################################################################################"
+
+echo " please run with root, sudo, or the script will not work"
+sleep 3
+
+# giving permision
+chmod 755 update
+
+# copying to bin 
+sudo cp -r update /usr/bin/
+
+#set path in profile just in case
+echo 'export PATH=/usr/bin/update:$PATH' | tee -a ~/.profile
+source ~/.profile
+echo " your all set, just type update anywhere in the terminal to open the update menu"
